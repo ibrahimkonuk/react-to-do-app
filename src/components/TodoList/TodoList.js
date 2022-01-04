@@ -1,18 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from './TodoList.module.css';
-import TodoItem from '../TodoListItem/TodoListItem'
+import TodoListItem from '../TodoListItem/TodoListItem'
 import TodoItemForm from '../TodoItemForm/TodoItemForm';
+import { removeTodo } from '../actions';
 
-const TodoList = ({ todos = [{ title: 'To-do item', description: 'To-do item description.' }] }) => (
+
+const TodoList = ({ todos = [], onRemovePressed }) => (
   <div className={styles.TodoList} data-testid="TodoList">
     <TodoItemForm />
-    {todos.map((todo, index) => < TodoItem key={index} todo={todo} />)}
+    {todos.map((todo, index) => <TodoListItem key={index} todo={todo} onRemovePressed={onRemovePressed} />)}
   </div>
 );
 
-TodoList.propTypes = {};
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
 
-TodoList.defaultProps = {};
+const mapDispatchToProps = dispatch => ({
+  onRemovePressed: (title) => dispatch(removeTodo(title)),
+});
 
-export default TodoList;
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

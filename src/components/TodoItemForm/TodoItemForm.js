@@ -1,20 +1,44 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from './TodoItemForm.module.css';
+import { createTodo } from '../actions';
 
-const TodoItemForm = () => {
-  const [inputValue, setInputValue] = useState('');
+
+const TodoItemForm = ({ todos, onCreatePressed }) => {
+
+  const [inputTitle, setTitleValue] = useState('');
+  const [inputDescription, setDecriptionValue] = useState('');
+
   return (
     <div className={styles.TodoItemForm} data-testid="TodoItemForm">
-      <input className='todo-form__input' type='text' value={inputValue}
-        onChange={e => setInputValue(e.target.value)} />
-      <button className='todo-form__button'>Add</button>
-    </div>
+      <label>Title</label>
+      <input className='todo-form__title' type='text' value={inputTitle}
+        onChange={e => setTitleValue(e.target.value)} />
+      <label>Description</label>
+      <input className='todo-form__description' type='text' value={inputDescription}
+        onChange={e => setDecriptionValue(e.target.value)} />
+      <button
+        className='todo-form__button'
+        onClick={() => {
+          const isDuplicateText =
+            todos.some(todo => todo.title === inputTitle);
+          if (!isDuplicateText && inputTitle && inputDescription) {
+            onCreatePressed(inputTitle, inputDescription);
+            setTitleValue('');
+            setDecriptionValue('');
+          }
+        }}
+      >Add</button>
+    </div >
   )
 };
 
-TodoItemForm.propTypes = {};
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
 
-TodoItemForm.defaultProps = {};
+const mapDispatchToProps = dispatch => ({
+  onCreatePressed: (title, description) => dispatch(createTodo(title, description)),
+});
 
-export default TodoItemForm;
+export default connect(mapStateToProps, mapDispatchToProps)(TodoItemForm);
