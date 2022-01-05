@@ -9,3 +9,9 @@ export const removeTodo = (title, description) => ({
     type: REMOVE_TODO,
     payload: { title, description },
 });
+
+export const MARK_TODO_AS_COMPLETED = 'MARK_TODO_AS_COMPLETED';
+export const markTodoAsCompleted = (title) => ({
+    type: MARK_TODO_AS_COMPLETED,
+    payload: { title },
+});
