@@ -22,7 +22,7 @@ const TodoItemForm = ({ todos, onCreatePressed }) => {
         onClick={() => {
           const isDuplicateText =
             todos.some(todo => todo.title === inputTitle);
-          if (!isDuplicateText) {
+          if (!isDuplicateText && inputTitle && inputDescription) {
             onCreatePressed(inputTitle, inputDescription);
             setTitleValue('');
             setDecriptionValue('');

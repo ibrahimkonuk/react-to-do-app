@@ -1,4 +1,4 @@
-import { createTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure, removeTodo } from './actions';
+import { createTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure, removeTodo, markTodoAsCompleted } from './actions';
 
 export const loadTodos = () => async (dispatch) => {
     try {
@@ -37,6 +37,18 @@ export const removeTodoRequest = id => async dispatch => {
         });
         const todo = await response.json();
         dispatch(removeTodo(todo))
+    } catch (e) {
+        dispatch(displayAlert(e));
+    }
+}
+
+export const updateTodoRequest = id => async dispatch => {
+    try {
+        const response = await fetch(`http://localhost:8080/todos/${id}/completed`, {
+            method: 'post'
+        });
+        const todo = await response.json();
+        dispatch(markTodoAsCompleted(todo));
     } catch (e) {
         dispatch(displayAlert(e));
     }
