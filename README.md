@@ -1,3 +1,9 @@
+# React to-do list app
+
+## Redux DevTools
+
+To be able to use Redux DevTools, install the [Chrome Redux DevTools browser extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?hl=en).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
