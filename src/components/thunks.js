@@ -1,4 +1,12 @@
-import { createTodo, loadTodosInProgress, loadTodosSuccess, loadTodosFailure, removeTodo, markTodoAsCompleted } from './actions';
+import {
+    createTodo,
+    loadTodosInProgress,
+    loadTodosSuccess,
+    loadTodosFailure,
+    removeTodo,
+    markTodoAsCompleted
+} from './actions';
+
 
 export const loadTodos = () => async (dispatch) => {
     try {
