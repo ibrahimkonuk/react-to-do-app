@@ -1,8 +1,38 @@
 # React to-do list app
 
+This is a simple React to-do list application with basic Rest API.
+
+## Installing and running the app
+
+In the project directory, you can:
+
+1- Install app dependencies: `npm ci`
+
+2- Install Rest API dependencies `npm --prefix ./server/ ci`
+
+3- Start local server: `npm --prefix ./server/ start`
+
+4- Start app: `npm start`
+
+## Running unit tests
+
+Run: `npm test`
+
+## Running end-to-end tests
+
+Run: `npm run e2e`
+
+Note: Make sure your Chrome driver package version is matching with your Chrome app.
+
 ## Redux DevTools
 
 To be able to use Redux DevTools, install the [Chrome Redux DevTools browser extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?hl=en).
+
+## Credits
+
+[Building Modern Projects with React - Shaun Wassell](https://www.linkedin.com/learning/instructors/shaun-wassell)
+
+[Flaticon](https://www.flaticon.com/)
 
 # Getting Started with Create React App
 
