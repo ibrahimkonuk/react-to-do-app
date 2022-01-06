@@ -5,10 +5,6 @@ import TodoListItem from './TodoListItem';
 
 describe('<TodoListItem />', () => {
   test('it should mount', () => {
-    render(<TodoListItem />);
-    
-    const todoListItem = screen.getByTestId('TodoListItem');
 
-    expect(todoListItem).toBeInTheDocument();
   });
 });
