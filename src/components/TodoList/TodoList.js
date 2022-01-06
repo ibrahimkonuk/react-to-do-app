@@ -15,7 +15,7 @@ const TodoList = ({
 
   useEffect(() => {
     startLoadingTodos();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const loadingMessage = <CircularProgress />;
 
