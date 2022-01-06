@@ -3,13 +3,22 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import uuid from 'uuid';
 
-let mockTodos = [{
-    id: 'ae06181d-92c2-4fed-a29d-fb53a6301eb9',
-    title: 'Learn about React Ecosystems',
-    description: 'Learn about React Ecosystems',
-    isCompleted: false,
-    createdAt: new Date(),
-}];
+let mockTodos = [
+    {
+        id: 'ae06181d-92c2-4fed-a29d-fb53a6301eb9',
+        title: 'Lorem Ipsum',
+        description: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..',
+        isCompleted: false,
+        createdAt: new Date(),
+    },
+    {
+        id: 'ae06181d-92c2-4fed-a29d-fb53a2ed5k6f',
+        title: 'Title',
+        description: 'This is description.',
+        isCompleted: false,
+        createdAt: new Date(),
+    }
+];
 
 const app = express();
 
