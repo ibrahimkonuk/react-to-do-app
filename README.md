@@ -1,5 +1,25 @@
 # React to-do list app
 
+## Installing and running the app
+
+In the project directory, you can:
+
+1- Install dependencies: `npm ci`
+
+2- Start local server: `npm --prefix ./server/ start`
+
+3- Start app: `npm start`
+
+## Running unit tests
+
+Run: `npm test`
+
+## Running end-to-end tests
+
+Run: `npm run e2e`
+
+Note: Make sure your Chrome driver package version is matching with your Chrome app.
+
 ## Redux DevTools
 
 To be able to use Redux DevTools, install the [Chrome Redux DevTools browser extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd/related?hl=en).
