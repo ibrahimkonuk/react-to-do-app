@@ -31,6 +31,7 @@ const TodoItemForm = ({ todos, onCreatePressed }) => {
     <>
       <Container
         data-testid="TodoItemForm"
+        id="todo-item-form"
         className={styles.TodoItemForm}
         sx={{ m: 2, mx: "auto", display: 'flex', flexDirection: 'column' }}
         component="form"
@@ -69,6 +70,7 @@ const TodoItemForm = ({ todos, onCreatePressed }) => {
         />
 
         <Button
+          id="todo-form__button"
           className='todo-form__button'
           sx={{ color: "#f50057", maxWidth: 100, mx: "auto" }}
           size="large"
