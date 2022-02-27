@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styles from './TodoItemForm.module.css';
-import { addTodoRequest } from '../thunks';
+import { addTodoRequest } from '../../thunks'
 
 import TextField from '@mui/material/TextField';
 import SaveIcon from '@mui/icons-material/Save';

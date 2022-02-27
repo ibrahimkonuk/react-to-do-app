@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styles from './TodoList.module.css';
 import TodoListItem from '../TodoListItem/TodoListItem'
 import TodoItemForm from '../TodoItemForm/TodoItemForm';
-import { loadTodos, removeTodoRequest, updateTodoRequest } from '../thunks';
+import { loadTodos, removeTodoRequest, updateTodoRequest } from '../../thunks';
 
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
